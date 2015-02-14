@@ -1,5 +1,5 @@
 *IDN?                               /* Query ID to check the operating state */
 OUTP?
 COUNter ON
-SLEEP 5
+SLEEP 1
 COUNter:FREQuency?

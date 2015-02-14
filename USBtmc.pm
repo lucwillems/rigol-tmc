@@ -69,6 +69,7 @@ sub runScript {
    } else {
       @lines=split("\n",$script)
    }
+   $|=1 if ($log);
    foreach my $line (@lines) {
          my $command;
          foreach my $inst (split(" ",$line)) {
@@ -76,14 +77,17 @@ sub runScript {
              $command=($command ? $command." ".$inst:$inst);
          }
          if ($command) {
+            print "$command" if ($log);
             my $answer="";
-            if ($command =~ /.*\?$/) { 
-               $answer=$self->Query($command);
+            if ($command =~ /sleep\s*(\d*)/i) {
+              #internal command
+              my $time=$1||1;
+              sleep($time);
             } else {
-               $self->SendCommand($command);
+               if ($command =~ /.*\?$/) { $answer=$self->Query($command); }
+               else { $self->SendCommand($command); }
             }
-            if($log) {
-              print "$command";
+            if ($log) {
               print " : $answer" if ($answer);
               print "\n";
             }
@@ -102,6 +106,10 @@ sub Query {
       last unless ($len==2048); 
   }
   chomp $answer;
+  #convert science to decimal notation
+  if ($answer =~ /^[\d\.e]+\+\d+/) {
+     $answer=sprintf("%.10f",$answer);
+  }
   return $answer;
 }
 

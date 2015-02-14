@@ -1,0 +1,5 @@
+*IDN?                    /* Query ID to check the operating state */
+VOLT:UNIT VPP            /* Set the unit of amplitude */
+APPL:SIN 20000,2.5,0.5   /*Set the frequency, amplitude and offset of the sine wave*/
+PHAS 10                  /* Set the initial phase */
+OUTP ON                  /*Enable the [Output] connector of CH1 at front panel */

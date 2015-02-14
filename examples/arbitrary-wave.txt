@@ -1,0 +1,8 @@
+*IDN?                         /* Query ID to check the operating state */
+FUNC:USER EXP_RISE            /* Select built-in wave function */
+FREQ 2000000                  /* Set the output frequency */
+VOLT:UNIT VRMS                /* Set the unit of amplitude */
+VOLT 5                        /* Set the output amplitude */
+VOLT:OFFS 0.01                /* Set the offset */
+PHAS 60                       /* Set the initial phase */
+OUTP ON                       /* Enable the [Output] connector of CH1 at the front panel */

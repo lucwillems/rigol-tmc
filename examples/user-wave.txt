@@ -1,0 +1,9 @@
+*IDN?                               /* Query ID to check the operating state */
+FUNC USER                           /* Select user-defined arbitrary wave*/
+FREQ 100000                         /* Set the frequency as 100kHz (period: 10μs)*/
+VOLT:UNIT VPP                       /* Set the unit of voltage*/
+VOLT:HIGH 4                         /* Set the high level*/
+VOLTage:LOW -4                      /* Set the low level*/
+DATA:DAC VOLATILE,8192,16383,8192,0 /* Load the 4 decimal numbers to volatile memory */
+FUNC:USER VOLATILE                  /* Output the waves in volatile memory */
+OUTP ON                             /* Enable the [Output] connector of CH1 at the front panel */

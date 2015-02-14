@@ -28,7 +28,7 @@ use USBtmc;
 
 my $usbtmc=new USBtmc();
 $usbtmc->open("09c4:0400");
-$usbtmc->runScript("rigol-test.txt");
+$usbtmc->runScript("examples/fsk.txt");
 ```
 * the 09c4:0400 is the USB vendor/product id you can find using lsusb
 * you must have RW access to the /dev/usbtmc* device file

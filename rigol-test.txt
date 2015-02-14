@@ -1,0 +1,14 @@
+*IDN?                /* Query ID to check the operating state */
+OUTP OFF
+FUNC SIN             /* Select carrier function*/
+FREQ 10000           /* Set the frequency of carrier*/
+VOLT:UNIT VPP        /* Set the amplitude unit of carrier */
+VOLT 5               /* Set the amplitude of carrier */
+VOLT:OFFS 0          /* Set the offset of carrier */
+FSK:STAT ON          /* Enable FSK function*/
+FSK:SOUR INT         /* Select internal modulation source */
+FSK:FREQ 800         /* Set the hop frequency */
+FSK:INT:RATE 200     /* Set the FSK rate*/
+
+/* Enable the [Output] connector of CH1 at the front panel */
+OUTP ON

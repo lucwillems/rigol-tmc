@@ -43,3 +43,9 @@ create this file under /etc/udev/rules.d/99-usbtmc.rules
 KERNEL=="usbtmc/*",       MODE="0660", GROUP="users"
 KERNEL=="usbtmc[0-9]*",   MODE="0660", GROUP="users"
 ```
+
+TODO :
+---
+* allot
+* add methods for scope handling
+* 
